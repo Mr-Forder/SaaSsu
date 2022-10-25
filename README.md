@@ -1,17 +1,28 @@
-# Subscribe the UI to Database Changes with Supabase Real-Time
+![sassy](https://user-images.githubusercontent.com/66869833/197805521-c686a93a-841f-4e8a-85e7-226f62a13a80.jpg)
 
-**[📹 Video](https://egghead.io/lessons/supabase-subscribe-the-ui-to-database-changes-with-supabase-real-time)**
 
-The cancellation event from stripe doesn't get triggered until the end of the billing cycle. Therefore, our customer may still be using our app when their subscription status changes, with their dashboard confusingly displaying the incorrect data.
+# SaaSsy - a Subscription based SaaS template work in progress featuring Db, auth (via Supabase) and stripe payments. 
 
-In this video, we implement Supabase real-time to subscribe the UI to changes in the database. We can initiate the subscription in our useUser hook, and specify that we only care about updates to our currently logged in user.
+SaaSsy will allow users to create a subscription based system (similar to that used on Patreon) that allows gated content via a Supabase backend,
+with customisable payment options handled via the Stripe API.
 
-In order for Supabase to broadcast these changes on our websocket connection, we need to enable replication for the specific tables we want to subscribe to.
+You'll need the following environment variables:
 
-This means that anytime our is_subscribed value changes in the profile table, our useUser hook will automatically be updated with the new value, and the dashboard will immediately update to display the correct data.
+```
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_KEY
+NEXT_PUBLIC_STRIPE_KEY
+STRIPE_SECRET_KEY
+API_ROUTE_SECRET
+STRIPE_SIGNING_SECRET
+SUPABASE_SERVICE_KEY
+```
 
-[👉 Next lesson](/26-configure-stripe-for-production-and-deploy-next-js-application-with-vercel)
 
----
+## To get Started
 
-Enjoyed the course? Follow me on [Twitter](https://twitter.com/jonmeyers_io) and subscribe to my [YouTube channel](https://www.youtube.com/channel/UCPitAIwktfCfcMR4kDWebDQ).
+```
+npm install
+
+npm run dev
+```
